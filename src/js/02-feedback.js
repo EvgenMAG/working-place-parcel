@@ -27,16 +27,15 @@ function onFormSubmit(evt) {
   console.log('Отправляем форму');
   evt.currentTarget.reset();
   localStorage.removeItem("name");
-  localStorage.removeItem("message");
+
 }
 
 
 function populateTextarea() {
   
   const savedName = JSON.parse(localStorage.getItem("name"));
-  //  const savedName = localStorage.getItem("name");
  
-  console.log(savedName);
+  
   const { name, message } = savedName;
   if (name) {
     refs.input.value = name;
@@ -45,13 +44,6 @@ function populateTextarea() {
     refs.textarea.value = message;
   }
 
-  // const savedMessage = localStorage.getItem("message");
-  // if (savedMessage) {
-  //   refs.textarea.value = savedMessage;
-    
-  // } if (savedName) {
-  //   refs.input.value = savedName;
-  // }
 }
 
 // Домой
@@ -59,29 +51,20 @@ function populateTextarea() {
 
 
 
-
-
-
 const formData = {};
-console.log(formData);
 
 function onFormInput(e) {
   formData[e.target.name] = e.target.value;
 
-  dataSet(formData)
-  return formData
+  return dataSet(formData)
+
 }
   
   
   function dataSet(formData) {
 
     const savedData = localStorage.setItem("name", JSON.stringify(formData))
-    // if (formData.name) {
-    //    localStorage.setItem("name", formData.name)
-    // }
-    // if (formData.message) {
-    //    localStorage.setItem("message", formData.message)
-    // }
+    
     return savedData
   }
 
