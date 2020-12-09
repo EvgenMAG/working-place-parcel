@@ -1,9 +1,26 @@
-console.log(localStorage);
+// console.log(localStorage);
 
-localStorage.setItem('my-data', JSON.stringify({ name: 'Mango', age: 2 }));
+// localStorage.setItem('my-data', JSON.stringify({ name: 'Mango', age: 2 }));
 
-const savedData = localStorage.getItem('my-data');
-console.log('savedData', savedData);
+// const savedData = localStorage.getItem('my-data');
+// console.log('savedData', savedData);
 
-const parsedData = JSON.parse(savedData);
-console.log('parsedData', parsedData);
+// const parsedData = JSON.parse(savedData);
+// console.log('parsedData', parsedData);
+
+ 
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('success!');
+  }, 2000);
+});
+
+
+
+
+
+
+
+
+
+
